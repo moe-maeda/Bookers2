@@ -1,9 +1,16 @@
-<h2>User info</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
 
-<%= image_tag @user.get_profile_image(100,100) %>
+<h3>New book</h3>
+<%= form_with model: @book do |f| %>
+  <p>title</p>
+  <%= f.text_field :title %>
+  <p>opinion</p>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
 
-<strong>name<%= @user.name %></strong>
-<strong>introduction<%= @user.introduction %></strong>
-
-
-
+    </div>
+  </div>
+</div>
