@@ -1,2 +1,9 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h2>User info</h2>
+
+<%= image_tag @user.get_profile_image(100,100) %>
+
+<strong>name<%= @user.name %></strong>
+<strong>introduction<%= @user.introduction %></strong>
+
+
+
