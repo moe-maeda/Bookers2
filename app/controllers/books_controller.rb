@@ -10,11 +10,12 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path
     else
-      render:new
+      render:index
     end
   end
 
   def index
+    @books = Book.all
   end
 
   def show
