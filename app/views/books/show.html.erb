@@ -1,2 +1,30 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+<h3>New book</h3>
+<%= form_with model: @book do |f| %>
+  <p>title</p>
+  <%= f.text_field :title %>
+  <p>opinion</p>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+    </div>
+
+<div class="offset-md-1"></div>
+
+  <div class="col-md-8">
+　　<h2>Book detail</h2>
+      <table>
+        <tr>
+          <td><%= image_tag @user.get_profile_image(100,100) %><%= link_to @user.name %></td>
+          <td><%= @book.title %></td>
+          <td><%= @book.body %></td>
+          <td><%= link_to "Edit", edit_book_path(params[:id]) %></td>
+          <td><%= link_to "Destroy", book_path(params[:id]), method: :delete %></td>
+        </tr>
+      </table>
+  </div>
+</div>
+</div>

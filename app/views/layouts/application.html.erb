@@ -11,12 +11,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <bodyclass="d-flex flex-column vh-100">
+  <body class="d-flex flex-column vh-100">
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container">
             <span><%= link_to "Bookers", root_path %></span>
-            </div>
+          </div>
             <li>
             <%= link_to "Home", root_path %>
             </li>
@@ -48,9 +48,9 @@
       </nav>
     </header>
 
-    <div class="container">
-      <footer class="row-expand-lg">CopyRight Infratop.inc</footer>
-    </div>
+      <footer class="mt-auto text-center fixed-bottom">
+        <p>CopyRight Infratop.inc</p>
+      </footer>
     <%= yield %>
   </body>
 </html>
