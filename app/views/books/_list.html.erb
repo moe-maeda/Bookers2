@@ -1,14 +1,12 @@
 
     <div class="col-md-3">
       <h2>User info</h2>
-          <div><%= image_tag @user.get_profile_image(100,100) %></div>
-          <div><strong>name <%= @user.name %></strong></div>
-          <div><strong>introduction <%= @user.introduction %></strong></div>
-        <% if @user == current_user %>
+          <div><%= image_tag @user_in.get_profile_image(100,100) %></div>
+          <div><strong>name <%= @user_in.name %></strong></div>
+          <div><strong>introduction <%= @user_in.introduction %></strong></div>
           <div class="btn w-40 btn-block btn-info mt-2">
-            <i class="fa-solid fa-user-gear"><%= link_to edit_user_registration_path %></i>
+            <i class="fa-solid fa-user-gear"><%= edit_user_registration_path(@user) %></i>
           </div>
-        <% end %>
 
       <h3>New book</h3>
         <%= form_with model: @book_new do |f| %>
@@ -16,7 +14,7 @@
           <%= f.text_field :title %>
           <p>opinion</p>
           <%= f.text_area :body %>
-          <%= f.submit 'Create Book' %>
+          <%= f.submit 'Create Book', class: "btn btn-block btn-info" %>
         <% end %>
     </div>
 
