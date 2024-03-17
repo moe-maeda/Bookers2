@@ -1,0 +1,23 @@
+
+    <div class="col-md-3">
+      <h2>User info</h2>
+          <div><%= image_tag @user.get_profile_image(100,100) %></div>
+          <div><strong>name <%= @user.name %></strong></div>
+          <div><strong>introduction <%= @user.introduction %></strong></div>
+        <% if @user == current_user %>
+          <div class="btn w-40 btn-block btn-info mt-2">
+            <i class="fa-solid fa-user-gear"><%= link_to edit_user_registration_path %></i>
+          </div>
+        <% end %>
+
+      <h3>New book</h3>
+        <%= form_with model: @book_new do |f| %>
+          <p>title</p>
+          <%= f.text_field :title %>
+          <p>opinion</p>
+          <%= f.text_area :body %>
+          <%= f.submit 'Create Book' %>
+        <% end %>
+    </div>
+
+    <div class="offset-md-1"></div>
