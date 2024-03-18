@@ -1,12 +1,12 @@
 
     <div class="col-md-3">
       <h2>User info</h2>
-          <div><%= image_tag @user_in.get_profile_image(100,100) %></div>
-          <div><strong>name <%= @user_in.name %></strong></div>
-          <div><strong>introduction <%= @user_in.introduction %></strong></div>
-          <div class="btn w-40 btn-block btn-info mt-2">
-            <i class="fa-solid fa-user-gear"><%= edit_user_registration_path(@user) %></i>
-          </div>
+          <div><%= image_tag @user_info.get_profile_image(100,100) %></div>
+          <div><strong>name <%= @user_info.name %></strong></div>
+          <div><strong>introduction <%= @user_info.introduction %></strong></div>
+          <%= link_to edit_user_path(@user_info.id), class: "btn w-40 btn-block btn-info mt-2" do %>
+            <i class="fa-solid fa-user-gear"></i>
+          <% end %>
 
       <h3>New book</h3>
         <%= form_with model: @book_new do |f| %>
