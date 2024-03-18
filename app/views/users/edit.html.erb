@@ -1,5 +1,15 @@
 <div class="container">
   <div class="row">
+    <% if @user.errors.any? %>
+      <div class="errors-box">
+        <div class="errors-title"><strong><%= @user.errors.count %> errors prohibited this obj from being saved:</strong></div>
+          <ul class="errors-message" type="square">
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+      </div>
+    <% end %>
     <div class="col-8 center-block">
       <h2>User info</h2>
       <%= form_with model: @user do |f| %>

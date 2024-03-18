@@ -15,36 +15,52 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <span><%= link_to "Bookers", root_path %></span>
-        </div>
-          <li>
-            <%= link_to "Home", root_path %>
-          </li>
-          <nav class="navbar">
-            <div class="row">
+          <span class="navbar-brand"><%= link_to "Bookers", root_path %></span>
+
+          <div class="collapse navbar-collapse" >
             <% if user_signed_in? %>
+              <ul class="list-unstyled nabvar-nav ml-auto">
               <li>
-                <%= link_to "Users", users_path %>
+                <%= link_to root_path do %>
+                  <i class="fa-solid fa-house"></i>
+                <% end %>
               </li>
               <li>
-                <%= link_to "Books", books_path %>
+                <%= link_to users_path do %>
+                  <i class="fa-solid fa-users"></i>
+                <% end %>
               </li>
               <li>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                <%= link_to books_path do %>
+                  <i class="fa-solid fa-book-open"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                <% end %>
               </li>
             <% else %>
               <li>
-                <%= link_to "About", about_path %>
+                <%= link_to about_path do %>
+                  <i class="fa-solid fa-link"></i>
+                <% end %>
               </li>
               <li>
-                <%= link_to "Sign up", new_user_registration_path %>
+                <%= link_to new_user_registration_path do %>
+                  <i class="fa-solid fa-user-plus"></i>
+                <% end %>
               </li>
               <li>
-                <%= link_to "Log in", new_user_session_path %>
+                <%= link_to new_user_session_path do %>
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                <% end %>
               </li>
+              </ul>
             <% end %>
           </div>
         </nav>
+        </div>
       </nav>
     </header>
 
