@@ -12,20 +12,28 @@
     <% end %>
   </div>
 
-  <div class="row mt-3">
+  <div class="row m-3">
     <div class="col-6 mx-auto">
       <h2>Editing Book</h1>
         <%= form_with model: @book do |f| %>
-          <p>title</p>
-          <%= f.text_field :title %>
-          <p>opinion</p>
-          <%= f.text_area :body %><br>
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+            <%= f.text_field :title, class: "w-100" %>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Opinion</label>
+            <%= f.text_area :body, class: "w-100" %>
+          </div>
           <%= f.submit 'Update Book', class: "btn btn-success" %>
         <% end %>
-
-
-      <%= link_to "Show", book_path(@book.id) %>
-      <%= link_to "Back", books_path %>
     </div>
   </div>
+
+  <div class="row hstack gap-4">
+    <div class="col-2"></div>
+    <div class="col-2 py-1 text-right border-right border-dark"><%= link_to "Show", book_path(@book.id) %></div>
+    <div class="col-1 py-1 pl-3 text-left"><%= link_to "Back", books_path %></div>
+    <div class="col-3"></div>
+  </div>
 </div>
+

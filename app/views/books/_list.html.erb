@@ -3,12 +3,12 @@
         <div class="flex-column">
         <span class="row"><%= image_tag user_info.get_profile_image(100,100) %></span>
           <span class="row border-top border-bottom">
-            <div class="col mx-1"><strong>name</strong></div>
-            <div class="col mx-1"><strong><%= user_info.name %></strong></div>
+            <div class="col mx-1 p-3"><strong>name</strong></div>
+            <div class="col mx-1 p-3"><strong><%= user_info.name %></strong></div>
           </span>
           <span class="row border-top">
-            <div class="col mx-1"><strong>introduction</strong></div>
-            <div class="col mx-1"><strong><%= user_info.introduction %></strong></div>
+            <div class="col mx-1 p-3"><strong>introduction</strong></div>
+            <div class="col mx-1 p-3"><strong><%= user_info.introduction %></strong></div>
           </span>
         </div>
         <%= link_to edit_user_path(user_info.id), class: "btn btn-block btn-outline-secondary my-3" do %>
