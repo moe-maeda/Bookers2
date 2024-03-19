@@ -1,16 +1,16 @@
 <div class="container">
-  <div class="row">
+  <div class="alart">
     <% if @user.errors.any? %>
-      <div class="errors-box">
-        <div class="errors-title"><strong><%= @user.errors.count %> errors prohibited this obj from being saved:</strong></div>
-          <ul class="errors-message" type="square">
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-      </div>
+      <strong><%= @user.errors.count %> errors prohibited this obj from being saved:</strong>
+        <ul class="errors-message">
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
     <% end %>
-    <div class="col-8 center-block">
+  </div>
+  <div class="row mt-3">
+    <div class="col-6 mx-auto">
       <h2>User info</h2>
       <%= form_with model: @user do |f| %>
         <p>Name<p>
@@ -19,7 +19,7 @@
         <%= f.file_field :profile_image, accept: "image/*" %>
         <p>Introduction</p>
         <%= f.text_area :introduction, autofocus: true %><br>
-        <%= f.submit "Update User", class: "btn btn-block btn-info w-25" %>
+        <%= f.submit "Update User", class: "btn btn-secondary" %>
       <% end %>
     </div>
   </div>

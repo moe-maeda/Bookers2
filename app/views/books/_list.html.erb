@@ -1,22 +1,19 @@
     <div class="col-md-3">
-      <div class="alart">
-        <% if book_new.errors.any? %>
-          <div><strong><%= book_new.errors.count %> errors prohibited this obj from being saved:</strong></div>
-          <ul class="errors-message">
-            <% book_new.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        <% end %>
-      </div>
-
       <h2>User info</h2>
-          <div><%= image_tag user_info.get_profile_image(100,100) %></div>
-          <div><strong>name <%= user_info.name %></strong></div>
-          <div><strong>introduction <%= user_info.introduction %></strong></div>
-            <%= link_to edit_user_path(user_info.id), class: "btn btn-block btn-outline-secondary mt-2" do %>
-              <i class="fa-solid fa-user-gear"></i>
-            <% end %>
+        <div class="flex-column">
+        <span class="row"><%= image_tag user_info.get_profile_image(100,100) %></span>
+          <span class="row border-top border-bottom">
+            <div class="col mx-1"><strong>name</strong></div>
+            <div class="col mx-1"><strong><%= user_info.name %></strong></div>
+          </span>
+          <span class="row border-top">
+            <div class="col mx-1"><strong>introduction</strong></div>
+            <div class="col mx-1"><strong><%= user_info.introduction %></strong></div>
+          </span>
+        </div>
+        <%= link_to edit_user_path(user_info.id), class: "btn btn-block btn-outline-secondary my-3" do %>
+          <i class="fa-solid fa-user-gear"></i>
+        <% end %>
 
       <h3>New book</h3>
         <%= form_with model: book_new do |f| %>
