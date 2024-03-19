@@ -13,10 +13,9 @@
 
   <body class="d-flex flex-column vh-100">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <span class="navbar-brand text-light"><%= link_to "Bookers", root_path %></span>
-
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -77,8 +76,14 @@
       </div>
       <%= yield %>
     </main>
-    <footer class="mt-auto text-center fixed-bottom">
-      <p>CopyRight Infratop.inc</p>
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
