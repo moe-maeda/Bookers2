@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:edit, :update]
 
   def create
-    @user_sign_up = User.new(user_params)
+    @user_sign_up = User.new
     if @user_sign_up.save
       flash[:notice] = "Welcome! You have signed up successfully."
     end
