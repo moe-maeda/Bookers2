@@ -9,9 +9,9 @@
       </ul>
     <% end %>
   </div>
-  <div class="row m-3">
+  <div class="row">
     <%= render 'books/list', user_info: @user_info, book_new: @book_new %>
-
+    <div class="offset-md-1"></div>
     <div class="col-md-8">
       <h2>Users</h2>
       <table class="table">
@@ -33,6 +33,5 @@
         </tbody>
       </table>
     </div>
-
   </div>
 </div>

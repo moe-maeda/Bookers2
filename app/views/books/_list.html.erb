@@ -17,12 +17,14 @@
 
       <h3>New book</h3>
         <%= form_with model: book_new do |f| %>
-          <p>title</p>
-          <%= f.text_field :title %>
-          <p>opinion</p>
-          <%= f.text_area :body %><br>
+        <div class=" form-group mb-2">
+          <label class="form-label">Title</label>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+        <div class=" form-group mb-2">
+          <label class="form-label">Opinion</label>
+          <%= f.text_area :body, class: "form-control" %>
+        </div>
           <%= f.submit 'Create Book', class: "btn btn-success" %>
         <% end %>
     </div>
-
-    <div class="offset-md-1"></div>
